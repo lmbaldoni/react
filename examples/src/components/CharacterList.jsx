@@ -1,19 +1,25 @@
-const CharactersList = ({characters}) => {
+const CharactersList = ({characters, maximum}) => {
+  
   return (
-    <ul>
-      {
-        /*
-        characters.map(character => {
-          return (
-            <p>{character}</p>
+    <div>
+      <ul>
+        {
+          /*
+          characters.map(character => {
+            return (
+              <p>{character}</p>
+            )
+          })
+          */
+          characters.map((character, index) =>
+            <li className={character.race} key={index}>{character.name}</li>
           )
-        })
-        */
-        characters.map((character, index) =>
-          <li className={character.race} key={index}>{character.name}</li>
-        )
-      }
-    </ul>
+        }
+      </ul>
+
+      <p>{maximum}</p>
+    </div>
+    
   )
 }
 

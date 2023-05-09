@@ -25,13 +25,15 @@ const App = () => {
     }
   ]
 
+  const maximum = 8
+
   return (
     <div>
       <h1>{titleApp}</h1>
 
       <img className="poster" src={dbImg} alt="Imagen de Goku" />
 
-      <CharactersList characters={characters} />
+      <CharactersList characters={characters} maximum={maximum} />
     </div>
   )
 }
