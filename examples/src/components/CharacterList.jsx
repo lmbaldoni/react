@@ -33,9 +33,11 @@ const CharactersList = ({dataChars, maximum}) => {
 
       <ul>
         {
-          dataChars.characters.map((character, index) =>
-            <Character charData={character} key={index} />
-          )
+          dataChars
+            .characters
+            .map((character, index) =>
+              <Character charData={character} key={index} />
+            )
         }
       </ul>
     </div>

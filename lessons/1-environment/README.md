@@ -55,7 +55,7 @@
 
 ## 2. Arquitectura por componentes
 
-![Árbol de componentes](1-components-tree.png "Árbol de componentes")
+![Árbol de componentes](components-tree.png "Árbol de componentes")
 
 ## 3. Renderizado condicional
 

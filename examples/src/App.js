@@ -19,6 +19,14 @@ const App = () => {
     {
       name: "Vegeta",
       race: "supersaiyan"
+    },
+    {
+      name: "Gohan",
+      race: "supersaiyan"
+    },
+    {
+      name: "Ginyu",
+      race: ""
     }
   ])
   let [maximum, setMaximum] = useState(0)
