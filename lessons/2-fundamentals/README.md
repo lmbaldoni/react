@@ -3,8 +3,8 @@
 ## Índice
 
 [1. Componentes](#1-componentes)  
-[2. Estado](#2-estado)  
-[3. Props](#3-props)  
+[2. Props](#2-props)  
+[3. Estado](#3-estado)  
 [4. Hooks](#4-hooks)
 
 ## 1. Componentes
@@ -39,11 +39,11 @@ Ejemplo de componente:
 
     export default Movie
 
-## 2. Estado
+## 2. Props
 
 .
 
-## 3. Props
+## 3. Estado
 
 .
 
