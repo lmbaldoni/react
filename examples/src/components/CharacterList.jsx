@@ -1,21 +1,26 @@
 import { useState, useEffect } from "react"
 import Character from "./Character"
+import CharacterForm from "./CharacterForm"
 
-const CharactersList = ({dataChars, maximum}) => {
+const CharacterList = ({dataChars, maximum}) => {
+  
+  // --------- Component states ---------
 
   const [name, setName] = useState("")
   const [race, setRace] = useState("")
   const [search, setSearch] = useState("")
   const [totalSaiyans, setTotalSaiyans] = useState(0)
 
+  // --------- Event handler functions ---------
+  
   const addCharacter = () =>
     dataChars.setCharacters([...dataChars.characters, { name, race }])
 
   const handlerName = event => setName(event.target.value)
   const handlerRace = event => setRace(event.target.value)
   const handlerSearch = event => setSearch(event.target.value)
-
-  const seePosition = index => alert(dataChars.characters[index].name)
+  
+  // --------- Side effects ---------
   
   useEffect(() => {
     const ts = dataChars
@@ -30,24 +35,17 @@ const CharactersList = ({dataChars, maximum}) => {
     setTotalSaiyans(ts)
   }, [dataChars])
   
+  // --------- Render ---------
+  
   return (
     <div>
-      <div>
-        <p>Nombre: <input type="text" onChange={handlerName} /></p>
-        <p>
-          Raza:
-          <select id="raceChar" onChange={handlerRace}>
-            <option value="">Humano</option>
-            <option value="supersaiyan">Supersaiyan</option>
-            <option value="namekiano">Namekiano</option>
-          </select>
-        </p>
-      </div>
+      <CharacterForm
+        handlerName={handlerName}
+        handlerRace={handlerRace}
+        addCharacter={addCharacter}
+      />
 
-      <button onClick={addCharacter}>Añadir nuevo</button>
-      <button onClick={() => seePosition(maximum)}>Alerta del maximum</button>
-
-      {/* ------------------------------------------------- */}
+      <hr />
 
       {
         dataChars.characters.length > 0
@@ -78,4 +76,4 @@ const CharactersList = ({dataChars, maximum}) => {
   )
 }
 
-export default CharactersList
+export default CharacterList

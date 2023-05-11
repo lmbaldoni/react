@@ -1,34 +1,9 @@
 // Imports
 import { useEffect, useState } from "react";
 import "./App.css"
-import dbImg from "./assets/images/dragon-ball.jpg"
 
-import CharactersList from "./components/CharacterList"
-
-/*
-[
-    {
-      name: "Goku",
-      race: "supersaiyan"
-    },
-    {
-      name: "Bulma",
-      race: ""
-    },
-    {
-      name: "Vegeta",
-      race: "supersaiyan"
-    },
-    {
-      name: "Gohan",
-      race: "supersaiyan"
-    },
-    {
-      name: "Ginyu",
-      race: ""
-    }
-  ]
-*/
+import Header from "./components/Header"
+import CharacterList from "./components/CharacterList"
 
 // Function
 const App = () => {
@@ -61,13 +36,18 @@ const App = () => {
   
   return (
     <div>
-      {/* <h1>{titleApp}</h1>
-      <img className="poster" src={dbImg} alt="Imagen de Goku" />
+      <Header
+        titleApp={titleApp}
+        maximum={maximum}
+        increaseMaximum={increaseMaximum}
+      />
 
-      <p>{maximum}</p>
-      <button onClick={increaseMaximum}>Incrementar</button> */}
+      <hr />
 
-      <CharactersList dataChars={{characters, setCharacters}} maximum={maximum}/>
+      <CharacterList
+        dataChars={{characters, setCharacters}} 
+        maximum={maximum}
+      />
     </div>
   )
 }
