@@ -1,13 +1,12 @@
 // Imports
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css"
 import dbImg from "./assets/images/dragon-ball.jpg"
 
 import CharactersList from "./components/CharacterList"
 
-// Function
-const App = () => {
-  const [characters, setCharacters] = useState([
+/*
+[
     {
       name: "Goku",
       race: "supersaiyan"
@@ -28,7 +27,12 @@ const App = () => {
       name: "Ginyu",
       race: ""
     }
-  ])
+  ]
+*/
+
+// Function
+const App = () => {
+  const [characters, setCharacters] = useState([])
   let [maximum, setMaximum] = useState(0)
   
   const increaseMaximum = () => setMaximum(maximum+1)
@@ -36,13 +40,32 @@ const App = () => {
   // Initialize data
   const titleApp = "Feliz Día de Goku"
 
+  // Side effect
+  useEffect(() => {
+
+    // Retrieve data
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then(response => response.json())
+      .then(data => {
+        const dataFormatted = data.map(person => {
+          return {
+            name: person.name,
+            race: "supersaiyan"
+          }
+        })
+
+        setCharacters(dataFormatted)
+      })
+
+  }, []) // <---------- First render
+  
   return (
     <div>
-      <h1>{titleApp}</h1>
+      {/* <h1>{titleApp}</h1>
       <img className="poster" src={dbImg} alt="Imagen de Goku" />
 
       <p>{maximum}</p>
-      <button onClick={increaseMaximum}>Incrementar</button>
+      <button onClick={increaseMaximum}>Incrementar</button> */}
 
       <CharactersList dataChars={{characters, setCharacters}} maximum={maximum}/>
     </div>
