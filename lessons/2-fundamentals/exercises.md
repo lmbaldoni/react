@@ -15,6 +15,7 @@
 3. Implementar las siguientes funcionalidades en la aplicación:
 
     - Pedir los datos de contactos a la API pública de jsonplaceholder
-    - Añadir dos botones al listado de Contactos:
+    - Añadir tres botones al listado de Contactos:
+      - Detalle: Permite ver el resto de campos del contacto además del nombre.
       - Editar: Permite cambiar el nombre y otro campo (a elegir) de cada contacto.
       - Eliminar: Permite eliminar el contacto seleccionado.
