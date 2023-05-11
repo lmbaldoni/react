@@ -11,3 +11,10 @@
     - **SearchBar**: Mostrar un campo de texto que a medida que se escriba en él, vaya filtrando los contactos a mostrar.
 
         ![Barra de búsqueda](search-bar.gif "Barra de búsqueda")
+
+3. Implementar las siguientes funcionalidades en la aplicación:
+
+    - Pedir los datos de contactos a la API pública de jsonplaceholder
+    - Añadir dos botones al listado de Contactos:
+      - Editar: Permite cambiar el nombre y otro campo (a elegir) de cada contacto.
+      - Eliminar: Permite eliminar el contacto seleccionado.

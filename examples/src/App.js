@@ -50,7 +50,7 @@ const App = () => {
         const dataFormatted = data.map(person => {
           return {
             name: person.name,
-            race: "supersaiyan"
+            race: person.id % 2 === 0 ? "supersaiyan": "human"
           }
         })
 
