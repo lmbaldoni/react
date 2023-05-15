@@ -19,3 +19,7 @@
       - Detalle: Permite ver el resto de campos del contacto además del nombre.
       - Editar: Permite cambiar el nombre y otro campo (a elegir) de cada contacto.
       - Eliminar: Permite eliminar el contacto seleccionado.
+
+4. Refactorizar la aplicación para usar Context en aquellos lugares donde proceda.
+
+5. Implementar la funcionalidad de Tema Claro/Oscuro para que el usuario pueda alternar entre ambos aspectos.

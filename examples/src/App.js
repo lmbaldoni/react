@@ -5,6 +5,8 @@ import "./App.css"
 import Header from "./components/Header"
 import CharacterList from "./components/CharacterList"
 
+import AddCharacterContext from "./contexts/AddCharacterContext"
+
 // Function
 const App = () => {
   const [characters, setCharacters] = useState([])
@@ -43,11 +45,12 @@ const App = () => {
       />
 
       <hr />
+      
+      <AddCharacterContext.Provider
+        value={{characters, setCharacters}}>
 
-      <CharacterList
-        dataChars={{characters, setCharacters}} 
-        maximum={maximum}
-      />
+        <CharacterList maximum={maximum} />
+      </AddCharacterContext.Provider>
     </div>
   )
 }

@@ -1,4 +1,20 @@
-const CharacterForm = ({handlerName, handlerRace, addCharacter}) => {
+import { useState, useContext } from "react"
+import AddCharacterContext from "../contexts/AddCharacterContext";
+
+const CharacterForm = () => {
+
+  // Consuming context
+  const dataChars = useContext(AddCharacterContext)
+
+  const [name, setName] = useState("")
+  const [race, setRace] = useState("")
+
+  const handlerName = event => setName(event.target.value)
+  const handlerRace = event => setRace(event.target.value)
+
+  const addCharacter = () =>
+    dataChars.setCharacters([...dataChars.characters, { name, race }])
+
   return (
     <div>
       <div>
