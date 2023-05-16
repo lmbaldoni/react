@@ -23,3 +23,14 @@
 4. Refactorizar la aplicación para usar Context en aquellos lugares donde proceda.
 
 5. Implementar la funcionalidad de Tema Claro/Oscuro para que el usuario pueda alternar entre ambos aspectos.
+
+6. Añadir a la aplicación un header con un menú siempre presente en todo momento que permita alternar entre dos vistas:
+
+  - Una página de bienvenida con un logo.
+  - Una página con el listado de contactos, la barra de búsqueda y un botón para "Añadir contacto".
+  
+      Al pinchar sobre dicho botón desaparecen el listado y la barra de búsqueda y aparece el formulario de añadir contacto, que debe tener un enlace para volver atrás.
+
+7. Modificar la aplicación para que al pinchar en el botón de Detalle en listado de Contactos, solo se vea la información de dicho contacto, además de un botón para volver Atrás en el listado.
+
+8. Añadir una página de 404 No encontrado.
