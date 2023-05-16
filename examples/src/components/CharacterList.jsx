@@ -6,7 +6,7 @@ import AddCharacterContext from "../contexts/AddCharacterContext";
 
 const CharacterList = () => {
 
-  const { characters } = useContext(AddCharacterContext)
+  const {characters} = useContext(AddCharacterContext)
   
   // --------- Component states ---------
 

@@ -1,18 +1,24 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const useFetch = (url, callbackFunction) => {
-  const [limit, setLimit] = useState(3)
+const useFetch = (url) => {
+  const [characters, setCharacters] = useState([])
 
-  fetch(url)
-    .then(response => response.json())
-    .then(data => {
-      callbackFunction()
-    })
-    .catch(() => {
-      setLimit(limit-1)
+  useEffect(() => {
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => {
+        const dataFormatted = data.map(person => {
+          return {
+            name: person.name,
+            race: person.id % 2 === 0 ? "supersaiyan": "human"
+          }
+        })
 
-      // Volver a pedir datos
-    })
+        setCharacters(dataFormatted)
+      })
+  }, [url])
+
+  return [characters, setCharacters]
 }
 
-export default useFetch
+export default useFetch;

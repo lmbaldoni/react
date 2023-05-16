@@ -5,36 +5,20 @@ import "./App.css"
 import Header from "./components/Header"
 import CharacterList from "./components/CharacterList"
 
+import useFetch from "./hooks/useFetch"
 import AddCharacterContext from "./contexts/AddCharacterContext"
 
 // Function
 const App = () => {
-  const [characters, setCharacters] = useState([])
-  let [maximum, setMaximum] = useState(0)
+  const [maximum, setMaximum] = useState(0)
   
   const increaseMaximum = () => setMaximum(maximum+1)
   
   // Initialize data
   const titleApp = "Feliz Día de Goku"
 
-  // Side effect
-  useEffect(() => {
-
-    // Retrieve data
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then(response => response.json())
-      .then(data => {
-        const dataFormatted = data.map(person => {
-          return {
-            name: person.name,
-            race: person.id % 2 === 0 ? "supersaiyan": "human"
-          }
-        })
-
-        setCharacters(dataFormatted)
-      })
-
-  }, []) // <---------- First render
+  // Retrieve data
+  const [characters, setCharacters] = useFetch("https://jsonplaceholder.typicode.com/users")
   
   return (
     <div>
@@ -46,10 +30,9 @@ const App = () => {
 
       <hr />
       
-      <AddCharacterContext.Provider
-        value={{characters, setCharacters}}>
+      <AddCharacterContext.Provider value={{characters, setCharacters}}>
 
-        <CharacterList maximum={maximum} />
+        <CharacterList />
       </AddCharacterContext.Provider>
     </div>
   )
