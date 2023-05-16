@@ -1,24 +1,21 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from "react"
 
-const useFetch = (url) => {
-  const [characters, setCharacters] = useState([])
+const useFetch = url => {
+  const [data, setData] = useState(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(false)
 
   useEffect(() => {
     fetch(url)
-      .then((res) => res.json())
-      .then((data) => {
-        const dataFormatted = data.map(person => {
-          return {
-            name: person.name,
-            race: person.id % 2 === 0 ? "supersaiyan": "human"
-          }
-        })
-
-        setCharacters(dataFormatted)
+      .then(response => response.json())
+      .then(data => {
+        setData(data)
+        setLoading(false)
       })
+      .catch(() => setError(true))
   }, [url])
 
-  return [characters, setCharacters]
+  return [data, setData, loading, error]
 }
 
-export default useFetch;
+export default useFetch

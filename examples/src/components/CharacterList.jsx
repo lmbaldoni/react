@@ -6,7 +6,11 @@ import AddCharacterContext from "../contexts/AddCharacterContext";
 
 const CharacterList = () => {
 
-  const {characters} = useContext(AddCharacterContext)
+  const {
+    characters,
+    loadingCharacters,
+    errorCharacters
+  } = useContext(AddCharacterContext)
   
   // --------- Component states ---------
 
@@ -20,8 +24,7 @@ const CharacterList = () => {
   // --------- Side effects ---------
   
   useEffect(() => {
-    const ts = characters
-                  .reduce((total, character) => {
+    const ts = characters?.reduce((total, character) => {
                     if(character.race === "supersaiyan")
                       return total + 1
                     else
@@ -40,28 +43,32 @@ const CharacterList = () => {
       <hr />
 
       {
-        characters.length > 0
+        errorCharacters 
         ?
-          <div>
-            <p>Filtrar por: <input type="text" onChange={handlerSearch} /></p>
-
-            <ul>
-              {
-                characters
-                  .filter(character =>
-                    character.name.length > 0 &&
-                    character.name.startsWith(search)
-                  )
-                  .map((character, index) =>
-                    <Character charData={character} key={index} />
-                  )
-              }
-            </ul>
-
-            <p>Total: {totalSaiyans}</p>
-          </div>
+        <p>Ha habido un error</p>
         :
-          <p>No hay personajes cargados</p>
+        loadingCharacters
+        ?
+        <p>Cargando...</p>
+        :
+        <div>
+          <p>Filtrar por: <input type="text" onChange={handlerSearch} /></p>
+
+          <ul>
+            {
+              characters
+                .filter(character =>
+                  character.name.length > 0 &&
+                  character.name.startsWith(search)
+                )
+                .map((character, index) =>
+                  <Character charData={character} key={index} />
+                )
+            }
+          </ul>
+
+          <p>Total: {totalSaiyans}</p>
+        </div>
       }
     </div>
   )

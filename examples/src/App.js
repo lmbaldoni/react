@@ -10,15 +10,20 @@ import AddCharacterContext from "./contexts/AddCharacterContext"
 
 // Function
 const App = () => {
+  // Private states & functions
   const [maximum, setMaximum] = useState(0)
-  
   const increaseMaximum = () => setMaximum(maximum+1)
   
   // Initialize data
   const titleApp = "Feliz Día de Goku"
-
+  
   // Retrieve data
-  const [characters, setCharacters] = useFetch("https://jsonplaceholder.typicode.com/users")
+  const [
+    characters,
+    setCharacters,
+    loadingCharacters,
+    errorCharacters
+  ] = useFetch("https://jsonplaceholder.typicode.com/users")
   
   return (
     <div>
@@ -30,8 +35,12 @@ const App = () => {
 
       <hr />
       
-      <AddCharacterContext.Provider value={{characters, setCharacters}}>
-
+      <AddCharacterContext.Provider value={{
+        characters,
+        setCharacters,
+        loadingCharacters,
+        errorCharacters
+      }}>
         <CharacterList />
       </AddCharacterContext.Provider>
     </div>
