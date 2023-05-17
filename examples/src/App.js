@@ -41,7 +41,7 @@ const App = () => {
   ] = useFetch("https://jsonplaceholder.typicode.com/users")
   
   return (
-    <div>
+    <div className="App">
       <Header
         titleApp={titleApp}
         maximum={maximum}
@@ -55,7 +55,7 @@ const App = () => {
       <hr />
 
       <Routes>
-        <Route path="/" element={ <Home /> } />
+        <Route path="/" element={ <Home title="Goku" /> } />
         <Route path="characters" element={
           <AddCharacterContext.Provider value={{
             characters,

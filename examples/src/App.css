@@ -1,11 +1,7 @@
-.supersaiyan {
-  color: yellow;
+.App .red {
+  color: red;
 }
 
-.namekiano {
-  color: green;
-}
-
-.poster {
+.App .poster {
   width: 200px
 }

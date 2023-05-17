@@ -6,7 +6,7 @@ const Header = ({titleApp, maximum, increaseMaximum}) => {
       <h1>{titleApp}</h1>
       <img className="poster" src={dbImg} alt="Imagen de Goku" />
 
-      <p>{maximum}</p>
+      <p className="red">{maximum}</p>
       <button onClick={increaseMaximum}>Incrementar</button>
     </div>
   )
