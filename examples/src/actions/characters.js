@@ -6,3 +6,10 @@ export const getSaiyans = () => {
 export const addCharacter = (payload) => {
   return { type: "GET_CHARACTER", payload }
 }
+
+export const addSaiyan = (name) => {
+  return {
+    type: "ADD_CHARACTER",
+    payload: { name, race: "supersaiyan" }
+  }
+}

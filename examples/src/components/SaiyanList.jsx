@@ -3,6 +3,7 @@ import Character from "./Character"
 
 import { connect } from 'react-redux'
 import { getSaiyans } from "../actions/characters"
+import SaiyanForm from "./SaiyanForm"
 
 const SaiyanList = ({dispatch, saiyans}) => {
 
@@ -13,11 +14,15 @@ const SaiyanList = ({dispatch, saiyans}) => {
 
   return (
     <div>
-      {
-        saiyans.map((character, index) =>
-          <Character charData={character} key={index} />
-        )
-      }
+      <ul>
+        {
+          saiyans.map((character, index) =>
+            <Character charData={character} key={index} />
+          )
+        }
+      </ul>
+
+      <SaiyanForm />
     </div>
   )
 }
