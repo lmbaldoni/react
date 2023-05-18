@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import "./Character.scss"
 
 const Character = ({charData}) => {
-
+  const [special, setSpecial] = useState(false)
   const [myColor, setMyColor] = useState("black")
 
   useEffect(() => {
@@ -10,7 +10,7 @@ const Character = ({charData}) => {
   }, [charData])
   
   return (
-    <li className={`character ${myColor}`}>{charData.name}</li>
+    <li className={`character ${myColor} ${special ? "tached" : ""}`} onClick={() => setSpecial(!special)}>{charData.name}</li>
 
     // <li style={{color: myColor}}>{charData.name}</li>
   )

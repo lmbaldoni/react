@@ -6,6 +6,7 @@ import { Routes, Route } from "react-router-dom"
 
 import Header from "./components/Header"
 import CharacterList from "./components/CharacterList"
+import SaiyanList from "./components/SaiyanList"
 import Home from "./components/Home"
 import Contact from "./components/Contact"
 import CharacterDetail from "./components/CharacterDetail"
@@ -68,6 +69,7 @@ const App = () => {
         } />
         <Route path="contact" element={ <Contact /> } />
         <Route path="character/:id" element={ <CharacterDetail /> } />
+        <Route path="saiyans" element={ <SaiyanList /> } />
         <Route path="*" element={ <NoMatch /> } />
       </Routes>
     </div>

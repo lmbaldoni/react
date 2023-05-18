@@ -8,6 +8,7 @@ const Menu = () => {
         <li><Link to="characters">Personajes</Link></li>
         <li><Link to="contact">Contacto</Link></li>
         <li><Link to="character/4">Ver el pj 4</Link></li>
+        <li><Link to="saiyans">Saiyans</Link></li>
       </ul>
     </div>
   )

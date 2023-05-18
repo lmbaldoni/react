@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from "react"
 import Character from "./Character"
 import CharacterForm from "./CharacterForm"
 
-import AddCharacterContext from "../contexts/AddCharacterContext";
+import AddCharacterContext from "../contexts/AddCharacterContext"
 
 const CharacterList = () => {
 
