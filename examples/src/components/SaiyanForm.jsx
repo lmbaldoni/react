@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useDispatch } from "react-redux"
-import { addSaiyan } from "../actions/characters"
+import { addSaiyan } from "../slices/characters/charactersSlice"
 
 const SaiyanForm = () => {
   const [name, setName] = useState("")

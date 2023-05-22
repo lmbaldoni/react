@@ -12,7 +12,7 @@ const SaiyanList = () => {
     <div>
       <ul>
         {
-          saiyans?.map((character, index) =>
+          saiyans.map((character, index) =>
             <Character charData={character} key={index} />
           )
         }

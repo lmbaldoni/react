@@ -1,23 +1,34 @@
 import { createSlice } from "@reduxjs/toolkit"
 
-const initialState = {
-  characters: []
-}
+const initialState = [
+  {
+    name: "Goku",
+    race: "supersaiyan"
+  },
+  {
+    name: "Krilin",
+    race: "human"
+  },
+  {
+    name: "Gohan",
+    race: "supersaiyan"
+  }
+]
 
 const charactersSlice = createSlice({
   name: "characters",
   initialState,
   reducers: {
-    getCharacters: state => state.characters,
-    addCharacter: (state, action) => {
-      state.characters.push(action.payload)
+    getCharacters: state => state,
+    addSaiyan: (state, action) => {
+      state.push({ name: action.payload, race: "supersaiyan" })
     }
   }
 })
 
 export const {
   getCharacters,
-  addCharacter
+  addSaiyan
 } = charactersSlice.actions
 
 export default charactersSlice.reducer
