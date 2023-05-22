@@ -28,8 +28,8 @@ const SaiyanList = ({dispatch, saiyans}) => {
 }
 
 // Redux State Mapping
-const mapStateToProps = (state) => ({
-  saiyans: state
+const mapStateToProps = state => ({
+  saiyans: state.characters
 })
 
 // Redux Connection
