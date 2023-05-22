@@ -4,7 +4,7 @@ import characterReducer from "./characterReducer"
 //import asteroidsReducer from "./asteroidsReducer"
 
 const rootReducer = combineReducers({
-  characters: characterReducer,
+  characters: characterReducer
 //  asteroids: asteroidsReducer
 })
 

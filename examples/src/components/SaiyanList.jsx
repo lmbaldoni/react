@@ -1,16 +1,12 @@
-import { useEffect } from "react"
-import Character from "./Character"
+import { useSelector } from "react-redux"
 
-import { connect } from 'react-redux'
-import { getSaiyans } from "../actions/characters"
+import Character from "./Character"
 import SaiyanForm from "./SaiyanForm"
 
-const SaiyanList = ({dispatch, saiyans}) => {
+const SaiyanList = () => {
 
   // --------- Get only saiyans from Redux ---------
-  useEffect(() => {
-    dispatch(getSaiyans())
-  }, [dispatch])
+  const saiyans = useSelector(state => state.characters)
 
   return (
     <div>
@@ -27,10 +23,4 @@ const SaiyanList = ({dispatch, saiyans}) => {
   )
 }
 
-// Redux State Mapping
-const mapStateToProps = state => ({
-  saiyans: state.characters
-})
-
-// Redux Connection
-export default connect(mapStateToProps)(SaiyanList)
+export default SaiyanList

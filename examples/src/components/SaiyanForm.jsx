@@ -1,9 +1,10 @@
-import { useState } from 'react'
-import { connect } from 'react-redux'
+import { useState } from "react"
+import { useDispatch } from "react-redux"
 import { addSaiyan } from "../actions/characters"
 
-const SaiyanForm = ({dispatch}) => {
+const SaiyanForm = () => {
   const [name, setName] = useState("")
+  const dispatch = useDispatch()
 
   return (
     <div>
@@ -16,10 +17,4 @@ const SaiyanForm = ({dispatch}) => {
   )
 }
 
-// Redux State Mapping
-const mapStateToProps = state => ({
-  saiyans: state.characters
-})
-
-// Redux Connection
-export default connect(mapStateToProps)(SaiyanForm)
+export default SaiyanForm
