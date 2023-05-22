@@ -1,8 +1,16 @@
-import { createStore } from "redux"
-import { composeWithDevTools } from "redux-devtools-extension"
+import { configureStore } from "@reduxjs/toolkit"
 
-import rootReducer from "./reducers"
+import asteroidsReducer from "./slices/asteroids/asteroidsSlice"
+import charactersReducer from "./slices/characters/charactersSlice"
 
-const store = createStore(rootReducer, composeWithDevTools())
+const store = configureStore({
+  reducer: {
+    asteroids: asteroidsReducer,
+    characters: charactersReducer,
+    // More reducers FROM slice
+  },
+  //middleware: ...
+  devTools: true
+})
 
 export default store
