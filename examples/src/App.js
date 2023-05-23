@@ -10,6 +10,7 @@ import SaiyanList from "./components/SaiyanList"
 import Home from "./components/Home"
 import Contact from "./components/Contact"
 import CharacterDetail from "./components/CharacterDetail"
+import Asteroids from "./components/Asteroids"
 import NoMatch from "./components/NoMatch"
 import Menu from "./components/Menu"
 
@@ -43,13 +44,13 @@ const App = () => {
   
   return (
     <div className="App">
-      <Header
+      {/* <Header
         titleApp={titleApp}
         maximum={maximum}
         increaseMaximum={increaseMaximum}
       />
 
-      <hr />
+      <hr /> */}
 
       <Menu />
 
@@ -70,6 +71,7 @@ const App = () => {
         <Route path="contact" element={ <Contact /> } />
         <Route path="character/:id" element={ <CharacterDetail /> } />
         <Route path="saiyans" element={ <SaiyanList /> } />
+        <Route path="asteroids" element={ <Asteroids /> } />
         <Route path="*" element={ <NoMatch /> } />
       </Routes>
     </div>
