@@ -2,7 +2,7 @@
 
 1. Implementar una aplicación en React que responda a la arquitectura de componentes definida en la siguiente imagen:
 
-    ![Árbol de componentes](../1-environment/components-tree.png "Árbol de componentes")
+    ![Árbol de componentes](./1-environment/components-tree.png "Árbol de componentes")
 
 2. Implementar las siguientes funcionalidades asociadas a cada componente:
 
@@ -10,7 +10,7 @@
     - **ContactList**: Mostrar la lista de contactos en todo momento.
     - **SearchBar**: Mostrar un campo de texto que a medida que se escriba en él, vaya filtrando los contactos a mostrar.
 
-        ![Barra de búsqueda](search-bar.gif "Barra de búsqueda")
+        ![Barra de búsqueda](./2-fundamentals/search-bar.gif "Barra de búsqueda")
 
 3. Implementar las siguientes funcionalidades en la aplicación:
 
@@ -34,3 +34,13 @@
 7. Modificar la aplicación para que al pinchar en el botón de Detalle en listado de Contactos, solo se vea la información de dicho contacto, además de un botón para volver Atrás en el listado.
 
 8. Añadir una página de 404 No encontrado.
+
+9. Añadir las siguientes funcionalidades nuevas en la aplicación, relacionadas con una lista de tareas, gestionando los datos de las mismas con Redux:
+
+    - Pedir datos de tareas a la API pública de jsonplaceholder
+    - Añadir tres botones al listado de Tareas:
+      - Editar: Permite cambiar el nombre y el estado (completada/no completada).
+      - Eliminar: Permite eliminar la tarea seleccionada.
+    - Añadir un enlace al menú de la aplicación para mostrar la lista de tareas.
+
+10. Añadir la posibilidad de Guardar/Borrar Contactos y Tareas del localStorage.
