@@ -38,9 +38,10 @@
 9. Añadir las siguientes funcionalidades nuevas en la aplicación, relacionadas con una lista de tareas, gestionando los datos de las mismas con Redux:
 
     - Pedir datos de tareas a la API pública de jsonplaceholder
-    - Añadir tres botones al listado de Tareas:
+    - Añadir dos botones al listado de Tareas:
       - Editar: Permite cambiar el nombre y el estado (completada/no completada).
       - Eliminar: Permite eliminar la tarea seleccionada.
+    - Añadir un formulario para añadir una tarea nueva.
     - Añadir un enlace al menú de la aplicación para mostrar la lista de tareas.
 
 10. Añadir la posibilidad de Guardar/Borrar Contactos y Tareas del localStorage.
