@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import Link from "./Link";
+
 const DivCenter = styled.div`
   text-align: center
 `;
@@ -19,6 +21,10 @@ const Home = ({title}) => {
   return (
     <div>
       Soy Home de {title}
+
+      <Link page="https://funny-banoffee-973e03.netlify.app/">
+        Ir a mi super proyecto
+      </Link>
 
       <DivCenter>
         <Boton>
